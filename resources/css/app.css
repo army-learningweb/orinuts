@@ -1,0 +1,7 @@
+@import url('./animate.css');
+@import url('./global.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
