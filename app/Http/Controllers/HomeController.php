@@ -17,7 +17,7 @@ class HomeController extends Controller
 
         $products_sales = Product::with('media')->with('review')->where('status','active')->where('up_sale','yes')->orderBy('updated_at','desc')->get();
         $products_disscount = Product::with('media')->with('review')->where('status','active')->where('disscount','>',0)->orderBy('updated_at','desc')->get();
-        $products_new = Product::with('media')->with('review')->where('status','active')->orderBy('created_at','desc')->limit(6)->get();
+        $products_new = Product::with(['media','review'])->whereNot('disscount','>',0)->orderBy('created_at','desc')->limit(6)->get();
         
         return view('client.index',compact('product_categories','products_sales','products_disscount','products_new','img_sliders'));
     }
