@@ -43,7 +43,6 @@ import clientSearchProduct from "./clientSearchProduct";
 
 import toggleSubmenu from "./toggleSubmenu";
 import toggleAdminOptions from "./toggleAdminOptions";
-import toggleChildCategories from "./toggleChildCategories";
 import toggleSideBar from "./toggleSideBar";
 import toggleNavbar from "./toggleNavbar";
 
@@ -97,7 +96,6 @@ $(document).ready(function () {
 
     toggleSubmenu();
     toggleAdminOptions();
-    toggleChildCategories();
     toggleSideBar();
     toggleNavbar();
    

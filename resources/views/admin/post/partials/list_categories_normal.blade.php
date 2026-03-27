@@ -40,8 +40,8 @@
         </div>
         <hr class="mt-4 mb-3">
         {{-- Bảng Categories --}}
-        <div class="overflow-x-auto">
-            <table class="text-sm border-gray-300 md:w-full min-w-[800px]">
+        <div class="overflow-x-auto overflow-y-auto max-h-[450px]">
+            <table class="text-sm border-gray-300 md:w-full min-w-[800px] ">
                 <thead>
                     <tr class="font-semibold">
                         <td class="px-1 py-1">
@@ -60,12 +60,11 @@
                 <tbody class="data-users">
                     {{-- CHA --}}
                     @foreach ($categories as $cat)
-                        <tr class="border-gray-300 border-b border-gray-500/15 hover:bg-gray-300/20 transition-all duration-150
-                        @if ($cat->parent_id > 0) hidden child_cat @else stop_open @endif">
+                        <tr class="border-gray-300 border-b border-gray-500/15 hover:bg-gray-300/20 transition-all duration-150">
                             <td class="px-1 py-3">
-                                @if ($cat->parent_id === 0 || $cat->parent_id === null)
+                                
                                     <input type="checkbox" name="cat_id[]" value="{{ $cat->id }}" @if (old('cat_id') && in_array($cat->id, old('cat_id'))) checked @endif class="check_single rounded-sm cursor-pointer mb-[2px]">
-                                @endif
+                               
                             </td>
                             <td class="py-3 px-2 cursor-pointer">
                                 <div class="w-[180px] truncate @if ($cat->parent_id === 0) parent_cat @endif">
