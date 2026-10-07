@@ -41,7 +41,10 @@ Route::post('admin/validation', [AdminValidationController::class, 'validation']
 // ====================================================================
 
 // MODULE DASHBOARD ---------------------------------------------------
-
+Route::group(['prefix' => 'laravel-filemanager'], function () {
+        Lfm::routes();
+    });
+    
 Route::middleware(['auth','verified'])->group(function(){
 
     // Thống kê

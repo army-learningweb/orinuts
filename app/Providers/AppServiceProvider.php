@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
         // Lấy menu
         View::composer('components.navbar',function($view){
             $menus = Menu::where('status','active')->orderBy('order','asc')->get();
-             $cart_count = Cart::count();
+            $cart_count = Cart::count();
             $view->with(compact('menus','cart_count'));
         });
 

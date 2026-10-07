@@ -1,5 +1,5 @@
 export default function changeQuantityProductCat() {
-    let timeout;
+    
 
     $(document).on("change", ".product_cart_quantity", function () {
         let qty = $(this).val();
@@ -8,9 +8,9 @@ export default function changeQuantityProductCat() {
 
         let data = { qty: qty, row_id: row_id, price: price };
 
-        clearTimeout(timeout);
+      
 
-        timeout = setTimeout(() => {
+        
             $.ajax({
                 type: "post",
                 url: "/gio-hang/changeQuantity",
@@ -26,6 +26,6 @@ export default function changeQuantityProductCat() {
                     $(".total").html(data.cart_count);
                 },
             });
-        }, 300);
+        
     });
 }
